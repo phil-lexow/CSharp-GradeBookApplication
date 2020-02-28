@@ -272,15 +272,13 @@ namespace GradeBook.GradeBooks
             return JsonConvert.DeserializeObject(json, gradebook);
         }
     }
-    public class StandardGradeBook :base(name)
+    public void StandardGradeBook (string name) : this(BaseGradeBook (name))
     {
         StandardGradeBook.Type=GradeBookType.Standard;
-        return;
     }
 
-    public class RankedGradeBook :base(name)
+    public void RankedGradeBook : this(BaseGradeBook (name))
     {
         RankedGradeBook.Type=GradeBookType.Ranked;
-        return;
     }
 }
