@@ -270,21 +270,4 @@ namespace GradeBook.GradeBooks
             return JsonConvert.DeserializeObject(json, gradebook);
         }
     }
-    public class StandardGradeBook : BaseGradeBook
-    {
-        StandardGradeBook(string name) : base(name)
-        {
-            this.Type = GradeBookType.Standard;
-        }
-            
-    }
-
-    public class RankedGradeBook : BaseGradeBook
-    {
-        RankedGradeBook(string name) : base(name)
-        {
-            this.Type = GradeBookType.Ranked;
-        }
-    }
-
 }
