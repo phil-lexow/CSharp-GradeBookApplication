@@ -21,6 +21,20 @@ namespace GradeBook.GradeBooks
             Students = new List<Student>();
         }
 
+        public StandardGradeBook(string name) : BaseGradeBook
+        {
+            StandardGradeBook(string name)
+                : base(name);
+            StandardGradeBook.Type=GradeBookType.Standard;
+        }
+
+        public RankedGradeBook(string name) : BaseGradeBook
+        {
+            RankedGradeBook(string name)
+                : base(name);
+            this.Type=GradeBookType.Ranked;
+        }
+
         public Type GradeBookType(string name)
         {
         }
@@ -271,14 +285,5 @@ namespace GradeBook.GradeBooks
             
             return JsonConvert.DeserializeObject(json, gradebook);
         }
-    }
-    public void StandardGradeBook (string name) : this(BaseGradeBook (name))
-    {
-        StandardGradeBook.Type=GradeBookType.Standard;
-    }
-
-    public void RankedGradeBook : this(BaseGradeBook (name))
-    {
-        RankedGradeBook.Type=GradeBookType.Ranked;
     }
 }
