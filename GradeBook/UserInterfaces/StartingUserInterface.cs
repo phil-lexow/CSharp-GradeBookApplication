@@ -41,16 +41,15 @@ namespace GradeBook.UserInterfaces
             }
             var name = parts[1];
             var type = parts[2];
-            var weighted = false;
+            var isweighted = false;
             if (parts[3] == "true")
-                weighted = true;
-            else
+                isweighted = true;
 
-//            BaseGradeBook gradeBook = new BaseGradeBook(name);
+            BaseGradeBook gradeBook;
             if (type == "standard")
-                gradeBook = new StandardGradeBook(name, weighted);
+                gradeBook = new StandardGradeBook(name, isweighted);
             if (type == "ranked")
-                gradeBook = new RankedGradeBook(name, weighted);
+                gradeBook = new RankedGradeBook(name, isweighted);
             else
             {
                 Console.WriteLine("{0} is not a supported type of gradebook, please try again", type);
