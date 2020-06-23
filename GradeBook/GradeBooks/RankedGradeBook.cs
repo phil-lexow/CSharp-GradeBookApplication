@@ -19,7 +19,7 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException("You must have at least 5 students to do randed grading.");
             }
             
-            var threshold = (int)Math.Ceeiling(Students.Count * 0.2);
+            var threshold = (int)Math.Ceiling(Students.Count * 0.2);
             var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
             
             if (averageGrade >= grades[threshold -1])
